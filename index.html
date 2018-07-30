@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>FastCars</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link href="grayscale.css" rel="stylesheet">
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">FastCars</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Actualmente</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#visualizations">Datos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+          <h1 class="mx-auto my-0 text-uppercase">FastCars</h1>
+          <h2 class="text-white-50 mx-auto mt-2 mb-5">Estos son los automóviles mas rápidos del mundo</h2>
+          <a href="#about" class="btn btn-primary js-scroll-trigger">Conócelos</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-white mb-4">Actualmente</h2>
+            <p class="text-white-50">
+                Ésta es una lista progresiva de los automóviles de producción más rápidos (no entran los vehículos conceptuales, ni los vehículos modificados)
+              En septiembre de 2007, el SSC Ultimate Aero TT registró la mejor marca con 412 km/h (256,18 mph), convirtiéndose en el vehículo de serie más rápido, siendo superado por el Bugatti Veyron (en su versión Super Sport) el 4 de julio de 2010, con una marca de 431 km/h.</p>
+          </div>
+        </div>
+        <img src="img/ipad.png" class="img-fluid" alt="">
+      </div>
+    </section>
+
+    <!-- Visualizations Section -->
+    <section id="visualizations" class="projects-section bg-light">
+      <div class="container">
+
+        <!-- Featured Project Row -->
+        <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+          <div class="col-xl-8 col-lg-7" id="principal"></div>
+          <div class="col-xl-4 col-lg-5">
+            <div class="featured-text text-center text-lg-left">
+              <h4>Nacimiento</h4>
+              <p class="text-black-50 mb-0">Fechas de creación expresadas en décadas.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project One Row -->
+        <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+          <div class="col-lg-6" id="secundario_left"></div>
+          <div class="col-lg-6">
+            <div class="bg-black text-center h-100 project">
+              <div class="d-flex h-100">
+                <div class="project-text w-100 my-auto text-center text-lg-left">
+                  <h4 class="text-white">Velocidad</h4>
+                  <p class="mb-0 text-white-50">Velocidades máximas alcanzadas expresadas en kilómetros y millas por hora.</p>
+                  <hr class="d-none d-lg-block mb-0 ml-0">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Two Row -->
+        <div class="row justify-content-center no-gutters">
+          <div class="col-lg-6" id="secundario_right"></div>
+          <div class="col-lg-6 order-lg-first">
+            <div class="bg-black text-center h-100 project">
+              <div class="d-flex h-100">
+                <div class="project-text w-100 my-auto text-center text-lg-right">
+                  <h4 class="text-white">Ejemplares</h4>
+                  <p class="mb-0 text-white-50">Cantidades que fueron fabricadas para cada modelo. ¿Sabias que para el SSC Ultimate Aero TT se fabricaron solo 24 unidades? </p>
+                  <hr class="d-none d-lg-block mb-0 mr-0">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!--/container-->
+    </section><!--/visualizations-->
+
+    <footer class="bg-black small text-center text-white-50">
+      <div class="container">
+        Copyright &copy; FastCars 2018
+      </div>
+    </footer>
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Plugin JavaScript -->
+    <script src="vendor/font-awesome/js/all.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    
+    <!-- Custom scripts for this template -->
+    <script src="js/grayscale.min.js"></script>
+
+    <!-- Data Drive Document -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+      
+      <!--llamo a la csv-->
+      <script>
+       d3.csv("https://raw.githubusercontent.com/brauliocardenas/fastcars/master/fastcars.csv").then(function(data) {
+           console.log(data);
+      
+      </script>
+          
+      
+      
+      
+      
+      
+      
+      <script>
+           var nacimiento = {
+               1920 = "Bentley 3 Litre Super Sports","Bentley 3 Litre Green Label",
+               1940 = "Jaguar XK120",
+               1950 = "Pegaso Z-102 Supercharged","Mercedes-Benz 300SL","Ferrari 410 Superamerica",
+               1960 = "Ferrari 250 GTO","Ferrari Daytona GTB/4",
+               1980 = "Ferrari 288 GTO","Porsche 959","Ferrari F40",
+               1990 = "Bugatti EB110 SS","Jaguar XJ220","McLaren F1",
+               2000 = "Saleen S7","Bugatti Veyron","SSC Ultimate Aero TT"
+               2010 = "Bugatti Veyron Super Sport", "Hennessey Venom GT","Koenigsegg Agera RS";
+               
+               
+           }
+           
+           
+           
+    </script>
+    <!--primera visualización-->
+    <script>
+      var principal = d3.select("#principal")
+      .append("svg")
+      .attr("width","100%")
+      .attr("height","420").style("background-color","#161616");
+      
+        
+        //1920
+        
+        principal.append("text")
+        .attr("x", 50)
+        .attr("y", 400)
+        .attr("fill","#FF0000")
+		.style("font-size","9px") 
+        .text("1920")
+        
+        
+        principal.append("text")
+        .attr("x", 50)
+        .attr("y", 380)
+        .attr("fill","#FF0000")
+		.style("font-size","9px") 
+        .text("Bentley 3 Litre Super Sports")
+        
+         principal.append("text")
+        .attr("x", 70)
+        .attr("y", 370)
+        .attr("fill","#FF0000")
+		 .style("font-size","9px") 
+        .text("Bentley 3 Litre Green Label")
+        
+        //1940
+        
+         principal.append("text")
+        .attr("x", 170)
+        .attr("y", 360)
+        .attr("fill","#FFA000")
+		 .style("font-size","9px") 
+        .text("Jaguar XK120")
+        
+        principal.append("text")
+        .attr("x", 150)
+        .attr("y", 400)
+        .attr("fill","#FFA000")
+		.style("font-size","9px") 
+        .text("1940")
+        
+        //1950
+        
+           principal.append("text")
+        .attr("x", 250)
+        .attr("y", 400)
+        .attr("fill","#EEA000")
+		   .style("font-size","9px") 
+        .text("1950")
+        
+         principal.append("text")
+        .attr("x", 230)
+        .attr("y", 350)
+        .attr("fill","#EEA000")
+		 .style("font-size","9px") 
+        .text("Pegaso Z-102 Supercharged")
+        
+        
+              principal.append("text")
+        .attr("x",250)
+        .attr("y", 340)
+        .attr("fill","#EEA000")
+			  .style("font-size","9px") 
+        .text("Mercedes-Benz 300SL")
+        
+         principal.append("text")
+        .attr("x", 260)
+        .attr("y", 330)
+        .attr("fill","#EEA000")
+		 .style("font-size","9px") 
+        .text("Ferrari 410 Superamerica")
+        
+        
+        //1960
+        
+        principal.append("text")
+        .attr("x", 340)
+        .attr("y", 400)
+        .attr("fill","#AAAA00")
+		.style("font-size","9px") 
+        .text("1960")
+        
+        principal.append("text")
+        .attr("x", 320)
+        .attr("y", 320)
+        .attr("fill","#AAAA00")
+		.style("font-size","9px") 
+        .text("Ferrari 250 GTO")
+        
+           principal.append("text")
+        .attr("x", 330)
+        .attr("y", 310)
+		   
+        .attr("fill","#AAAA00")
+		   .style("font-size","9px") 
+        .text("Ferrari Daytona GTB/4")
+        
+        //1980 
+        
+           principal.append("text")
+        .attr("x", 420)
+        .attr("y", 400)
+        .attr("fill","#AACC00")
+		   .style("font-size","9px") 
+        .text("1980")
+        
+        
+          principal.append("text")
+        .attr("x", 400)
+        .attr("y", 300)
+        .attr("fill","#AACC00")
+		  .style("font-size","9px") 
+        .text("Ferrari 288 GTO")
+        
+        principal.append("text")
+        .attr("x", 410)
+        .attr("y", 290)
+		.style("font-size","9px") 
+        .attr("fill","#AACC00")
+        .text("Porsche 959")
+        
+        principal.append("text")
+        .attr("x", 430)
+        .attr("y", 280)
+		.style("font-size","9px") 
+        .attr("fill","#AACC00")
+        .text("Ferrari F40")
+        
+        //1990
+        
+         principal.append("text")
+        .attr("x", 500)
+        .attr("y", 400)
+        .attr("fill","#AADD00")
+		 .style("font-size","9px") 
+        .text("1990")
+        
+        principal.append("text")
+        .attr("x", 470)
+        .attr("y", 270)
+        .attr("fill","#AADD00")
+		.style("font-size","9px")
+        .text("Bugatti EB110 SS0")
+        
+          principal.append("text")
+        .attr("x", 490)
+        .attr("y", 260)
+        .attr("fill","#AADD00")
+		  .style("font-size","9px")
+        .text("Jaguar XJ220")
+        
+        principal.append("text")
+        .attr("x", 495)
+        .attr("y", 250)
+		.style("font-size","9px")
+        .attr("fill","#AADD00")
+        .text("McLaren F1")
+        
+        //2000
+        
+           principal.append("text")
+        .attr("x", 590)
+        .attr("y", 400)
+        .attr("fill","#00BB00")
+		   .style("font-size","9px") 
+        .text("2000")
+        
+        principal.append("text")
+        .attr("x", 550)
+        .attr("y", 240)
+        .attr("fill","#00BB00")
+		.style("font-size","9px") 
+        .text("Saleen S7")
+        
+        principal.append("text")
+        .attr("x", 560)
+        .attr("y", 230)
+        .attr("fill","#00BB00")
+		.style("font-size","9px") 
+        .text("Bugatti Veyron")
+        
+        
+        
+         principal.append("text")
+        .attr("x", 570)
+        .attr("y", 220)
+        .attr("fill","#00BB00")
+		 .style("font-size","9px") 
+        .text("SSC Ultimate Aero TT")
+        
+        //2010
+        
+         principal.append("text")
+        .attr("x", 690)
+        .attr("y", 400)
+        .attr("fill","#00DD00")
+		 .style("font-size","9px") 
+        .text("2010")
+        
+         principal.append("text")
+        .attr("x", 590)
+        .attr("y", 210)
+        .attr("fill","#00DD00")
+		 .style("font-size","9px") 
+        .text("Bugatti Veyron Super Sport")
+        
+          principal.append("text")
+        .attr("x", 600)
+        .attr("y", 200)
+        .attr("fill","#00DD00")
+		  .style("font-size","9px") 
+        .text("Hennessey Venom GT")
+        
+        
+        
+         principal.append("text")
+        .attr("x", 620)
+        .attr("y", 190)
+        .attr("fill","#00DD00")
+		 .style("font-size","9px")
+        .text("Koenigsegg Agera RS")
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </script>
+
+    <!--segunda visualización-->
+    <script>
+      var secundario_left = d3.select("#secundario_left")
+      .append("svg")
+      .attr("width","100%")
+      .attr("height","500")
+      .style("background-color","#BABABA");
+		
+		//circulo numero 1
+		
+      secundario_left.append("circle")
+          .attr("cx","50%")
+          .attr("cy","200")
+          .attr("r","100")
+          .attr("fill","#FF0000");
+        
+		secundario_left.append("text")
+         
+		
+	     .attr("x", 265)
+        .attr("y", 140)
+        .attr("fill","#000000")
+		 .style("font-size","9px")  
+        .text("457.9")
+		
+		secundario_left.append("text")
+		.attr("x", 80)
+        .attr("y", 150)
+        .attr("fill","#000000")
+		 .style("font-size","9px")  
+        .text("Koenigsegg Agera RS")
+		
+		
+		
+		//circulo numero 2
+		
+		  secundario_left.append("circle")
+          .attr("cx","50%")
+          .attr("cy","250")
+          .attr("r","90")
+          .attr("fill","#ff5214");
+        
+		secundario_left.append("text")
+         
+	     .attr("x", 265)
+        .attr("y", 200)
+        .attr("fill","#000000")
+		.style("font-size","9px")  
+        .text("435.2")
+		
+		secundario_left.append("text")
+		.attr("x", 370)
+        .attr("y", 265)
+        .attr("fill","#000000")
+		 .style("font-size","9px")  
+        .text("Hennessey Venom GT")
+		
+		//TERCER CIRCULO
+		
+			  secundario_left.append("circle")
+          .attr("cx","50%")
+          .attr("cy","300")
+          .attr("r","70")
+          .attr("fill","#ffc700");
+        
+		secundario_left.append("text")
+         
+	     .attr("x", 268)
+        .attr("y", 270)
+        .attr("fill","#000000")
+		.style("font-size","9px")  
+        .text("431")
+		
+		secundario_left.append("text")
+		.attr("x", 65)
+        .attr("y", 330)
+        .attr("fill","#000000")
+		 .style("font-size","9px")  
+        .text("Bugatti Veyron Super Sport")
+		
+		//CIRCULO_cuatro
+		
+			  secundario_left.append("circle")
+          .attr("cx","50%")
+          .attr("cy","340")
+          .attr("r","50")
+          .attr("fill","#f6ff00");
+        
+		secundario_left.append("text")
+         
+	     .attr("x", 268)
+        .attr("y", 320)
+        .attr("fill","#000000")
+		.style("font-size","9px")  
+        .text("	412")
+		
+		secundario_left.append("text")
+		.attr("x", 330)
+        .attr("y", 365)
+        .attr("fill","#000000")
+		 .style("font-size","9px")  
+        .text("	SSC Ultimate Aero TT")
+		
+		//QUINTO CIRULO
+		
+			  secundario_left.append("circle")
+          .attr("cx","50%")
+          .attr("cy","380")
+          .attr("r","40")
+          .attr("fill","#a1ff00");
+        
+		secundario_left.append("text")
+         
+	     .attr("x", 265)
+        .attr("y", 370)
+        .attr("fill","#000000")
+		.style("font-size","9px")  
+        .text("408.5")
+		
+		secundario_left.append("text")
+		.attr("x", 160)
+        .attr("y", 400)
+        .attr("fill","#000000")
+		 .style("font-size","9px")  
+        .text("Bugatti Veyron")
+		
+		
+		//sexto CIRCULO
+		
+			  secundario_left.append("circle")
+          .attr("cx","50%")
+          .attr("cy","410")
+          .attr("r","30")
+          .attr("fill","#35ea19");
+        
+		secundario_left.append("text")
+         
+	     .attr("x", 268)
+        .attr("y", 410)
+        .attr("fill","#000000")
+		.style("font-size","9px")  
+        .text("399")
+		
+		secundario_left.append("text")
+		.attr("x", 310)
+        .attr("y", 420)
+        .attr("fill","#000000")
+		 .style("font-size","9px")  
+        .text("Saleen S7")
+		
+		//KMS
+		
+		secundario_left.append("text")
+		.attr("x", 420)
+        .attr("y", 100)
+        .attr("fill","#000000")
+		 .style("font-size","16px")  
+        .text("Km/h")
+		
+		secundario_left.append("text")
+		.attr("x", 420)
+        .attr("y", 110)
+        .attr("fill","#000000")
+		 .style("font-size","8px")  
+        .text("Kilómetros por hora")
+		
+     
+    </script>
+    
+    <!--tercera visualización-->
+    <script>
+      var secundario_right = d3.select("#secundario_right")
+	  .append("svg")
+	  .attr("width","100%")
+	  .attr("height","400")
+	  .style("background-color","#BABABA");
+    
+		
+		//PRIMER CIRCULO
+		
+		  secundario_right.append("circle")
+          .attr("cx","90")
+          .attr("cy","200")
+          .attr("r","30")
+          .attr("fill","#ff4300");
+		
+		secundario_right.append("text")
+		.attr("x", 40)
+        .attr("y", 250)
+        .attr("fill","#000000")
+		 .style("font-size","9px")  
+        .text("SSC Ultimate Aero TT")
+		
+			secundario_right.append("text")
+		.attr("x", 85)
+        .attr("y", 205)
+        .attr("fill","#000000")
+		 .style("font-size","9px") 
+  .text("24")
+			
+			
+			
+			// SEGUNDO CIRCILO
+			
+			secundario_right.append("circle")
+          .attr("cx","230")
+          .attr("cy","190")
+          .attr("r","40")
+          .attr("fill","#ff8300");
+		
+		secundario_right.append("text")
+		.attr("x", 180)
+        .attr("y", 250)
+        .attr("fill","#000000")
+		 .style("font-size","9px")  
+        .text("Hennessey Venom GT")
+		
+			secundario_right.append("text")
+		.attr("x", 225)
+        .attr("y", 195)
+        .attr("fill","#000000")
+		 .style("font-size","9px")  
+        .text("30")
+			
+			//tercer
+			
+				secundario_right.append("circle")
+          .attr("cx","400")
+          .attr("cy","180")
+          .attr("r","50")
+          .attr("fill","#ffaa00");
+		
+		secundario_right.append("text")
+		.attr("x", 340)
+        .attr("y", 250)
+        .attr("fill","#000000")
+		 .style("font-size","9px")  
+        .text("Ferrari 410 Superamerica")
+		
+			secundario_right.append("text")
+		.attr("x", 395)
+        .attr("y", 185)
+        .attr("fill","#000000")
+		 .style("font-size","9px")  
+        .text("34")
+			
+			
+			
+    </script>
+
+  </body>
+</html>
